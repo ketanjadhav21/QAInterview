@@ -1,0 +1,99 @@
+{
+  "tests": [
+    {
+      "steps": [
+        {
+          "method": "POST",
+          "endpoint": "ACQUIRE",
+          "description": "Raw Credential with 108 error code",
+          "mode": "interactive",
+          "testdata": {
+            "providers": [
+              {
+                "providerId": "59d6e309-a8cd-49c7-9398-462cae6bdae5",
+                "credentialSets": [
+                  {
+                    "credentials": [
+                      {
+                        "authenticationFieldId": "61b36db6-297c-46e7-9731-44421f259a42",
+                        "authenticationFieldType": "primary",
+                        "authenticationFieldValue": "FDI_PFM_BANKING_01",
+                        "encrypted": false
+                      },
+                      {
+                        "authenticationFieldId": "40f8c9b6-5b67-4177-8951-d3e87ca53444",
+                        "authenticationFieldType": "primary",
+                        "authenticationFieldValue": "ksjnf",
+                        "encrypted": false
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "requestParams": {
+              "async": false,
+              "persist": true,
+              "selectors": {
+                "accountSelector": {},
+                "transactionSelector": {},
+                "piiSelector": {}
+              }
+            }
+          },
+          "assertions": {
+            "response.status": 200
+          }
+        }
+      ]
+    },
+     {
+      "steps": [
+        {
+          "method": "POST",
+          "endpoint": "ACQUIRE",
+          "description": "Raw Credential with 108 error code",
+          "mode": "interactive",
+          "testdata": {
+            "providers": [
+              {
+                "providerId": "59d6e309-a8cd-49c7-9398-462cae6bdae5",
+                "credentialSets": [
+                  {
+                    "credentials": [
+                      {
+                        "authenticationFieldId": "61b36db6-297c-46e7-9731-44421f259a42",
+                        "authenticationFieldType": "primary",
+                        "authenticationFieldValue": "FDI_PFM_BANKING_20",
+                        "encrypted": false
+                      },
+                      {
+                        "authenticationFieldId": "40f8c9b6-5b67-4177-8951-d3e87ca53444",
+                        "authenticationFieldType": "primary",
+                        "authenticationFieldValue": "ksjnf",
+                        "encrypted": false
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "requestParams": {
+              "async": false,
+              "persist": true,
+              "selectors": {
+                "accountSelector": {},
+                "transactionSelector": {},
+                "piiSelector": {}
+              }
+            }
+          },
+          "assertions": {
+            "response.status": 200
+          }
+        }
+      ]
+    }
+    
+  ]
+}
