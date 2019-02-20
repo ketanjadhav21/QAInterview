@@ -48,7 +48,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+public class EqualizeTheArray {
 
     // Complete the equalizeArray function below.
     static int equalizeArray(int[] arr) {

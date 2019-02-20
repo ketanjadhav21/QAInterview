@@ -73,7 +73,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+public class FlatlandSpaceStation {
 
     // Complete the flatlandSpaceStations function below.
     static int flatlandSpaceStations(int n, int[] c) {

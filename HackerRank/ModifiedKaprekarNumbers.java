@@ -63,7 +63,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+public class ModifiedKaprekarNumbers {
 
     // Complete the kaprekarNumbers function below.
     static void kaprekarNumbers(int p, int q) {

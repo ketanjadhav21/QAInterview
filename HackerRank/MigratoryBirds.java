@@ -74,7 +74,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+public class MigratoryBirds {
 
     // Complete the migratoryBirds function below.
     static int migratoryBirds(int[] ar) {

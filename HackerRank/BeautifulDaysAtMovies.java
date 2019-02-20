@@ -56,7 +56,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+public class BeautifulDaysAtMovies {
 
     // Complete the beautifulDays function below.
     static int beautifulDays(int i, int j, int k) {

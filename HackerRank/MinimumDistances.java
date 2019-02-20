@@ -52,7 +52,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+public class MinimumDistances {
 
     // Complete the minimumDistances function below.
     static int minimumDistances(int[] a) {

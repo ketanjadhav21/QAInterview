@@ -57,7 +57,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+public class BeautifulTriplets {
 
     // Complete the beautifulTriplets function below.
     static int beautifulTriplets(int d, int[] arr) {

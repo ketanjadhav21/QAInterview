@@ -83,7 +83,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+public class BirthdayChoclate {
 
     // Complete the solve function below.
     static int solve(int[] s, int d, int m) {

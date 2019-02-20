@@ -78,7 +78,7 @@ import java.text.*;
 import java.util.*;
 import java.util.regex.*;
 
-public class Solution {
+public class DrawingBook {
 
     /*
      * Complete the pageCount function below.

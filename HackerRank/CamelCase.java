@@ -60,7 +60,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+public class CamelCase {
 
     // Complete the camelcase function below.
     static int camelcase(String s) {

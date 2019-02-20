@@ -73,7 +73,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+public class SaveThePrisoner {
 
     // Complete the saveThePrisoner function below.
     static int saveThePrisoner(int n, int m, int s) {

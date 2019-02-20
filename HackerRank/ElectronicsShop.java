@@ -65,7 +65,7 @@ import java.text.*;
 import java.util.*;
 import java.util.regex.*;
 
-public class Solution {
+public class ElectronicsShop {
 
     /*
      * Complete the getMoneySpent function below.

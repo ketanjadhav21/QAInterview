@@ -50,7 +50,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+public class DivisibleSumPairs {
 
     // Complete the divisibleSumPairs function below.
     static int divisibleSumPairs(int n, int k, int[] ar) {

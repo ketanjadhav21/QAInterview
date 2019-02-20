@@ -70,7 +70,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+public class DiagonalDifference {
 
     // Complete the diagonalDifference function below.
     

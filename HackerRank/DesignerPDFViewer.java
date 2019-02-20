@@ -70,7 +70,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+public class DesignerPDFViewer {
 
     // Complete the designerPdfViewer function below.
     static int designerPdfViewer(int[] h, String word) {

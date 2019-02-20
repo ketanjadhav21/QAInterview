@@ -63,7 +63,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+public class CatsAndAMouse {
 
     // Complete the catAndMouse function below.
     static String catAndMouse(int x, int y, int z) {

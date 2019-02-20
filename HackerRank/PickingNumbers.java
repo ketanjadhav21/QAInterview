@@ -58,7 +58,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+public class PickingNumbers {
 
     // Complete the pickingNumbers function below.
     static int pickingNumbers(int[] a) {

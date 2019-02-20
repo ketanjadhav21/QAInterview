@@ -63,7 +63,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+public class LisasWorkbook {
 
     // Complete the workbook function below.
     static int workbook(int n, int k, int[] arr) {

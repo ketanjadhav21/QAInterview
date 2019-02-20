@@ -4,7 +4,7 @@ public class CountCharacters {
 	 
 	   public static void main(String args[]){
 	 
-	      String str="abcdefgaaabcccdddeeefff";
+	      String str="aabc";
 	      String temp="";
 	 
 	      for (int i = 0; i < str.length(); i++) {

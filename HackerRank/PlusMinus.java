@@ -61,7 +61,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+public class PlusMinus {
     static int pos = 0;
     static int neg = 0;
     static int zero = 0;

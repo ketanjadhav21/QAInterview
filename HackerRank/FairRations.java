@@ -69,7 +69,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+public class FairRations {
 
     // Complete the fairRations function below.
     static int fairRations(int[] B) {

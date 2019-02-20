@@ -48,7 +48,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+public class AVeryBigSum {
     static long total = 0;
     // Complete the aVeryBigSum function below.
     static long aVeryBigSum(long[] ar) {

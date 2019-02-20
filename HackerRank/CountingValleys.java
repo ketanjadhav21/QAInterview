@@ -58,7 +58,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+public class CountingValleys {
 
     // Complete the countingValleys function below.
     static int countingValleys(int n, String s) {

@@ -53,7 +53,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+public class HalloweenSale {
 
     // Complete the howManyGames function below.
     static int howManyGames(int p, int d, int m, int s) {

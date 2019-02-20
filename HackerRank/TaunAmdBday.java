@@ -86,7 +86,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+public class TaunAmdBday {
 
     // Complete the taumBday function below.
     static long taumBday(long b, long w, long bc, long wc, long z) {

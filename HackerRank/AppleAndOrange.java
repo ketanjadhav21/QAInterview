@@ -76,7 +76,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+public class AppleAndOrange {
 
     // Complete the countApplesAndOranges function below.
     static void countApplesAndOranges(int s, int t, int a, int b, int[] apples, int[] oranges) {

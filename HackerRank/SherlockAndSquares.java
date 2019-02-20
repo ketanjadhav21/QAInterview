@@ -56,7 +56,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+public class SherlockAndSquares {
 
     // Complete the squares function below.
     static int squares(int a, int b) {

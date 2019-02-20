@@ -60,7 +60,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+public class ChoclateFeast {
 
     // Complete the chocolateFeast function below.
     static int chocolateFeast(int n, int c, int m) {

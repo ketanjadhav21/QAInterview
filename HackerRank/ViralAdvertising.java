@@ -62,7 +62,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+public class ViralAdvertising {
 
     // Complete the viralAdvertising function below.
     static int viralAdvertising(int n) {

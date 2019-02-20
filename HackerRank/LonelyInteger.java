@@ -74,7 +74,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+public class LonelyInteger {
 
     // Complete the lonelyinteger function below.
     static int lonelyinteger(int[] a) {

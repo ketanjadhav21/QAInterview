@@ -79,7 +79,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+public class ServiceLane {
 
     // Complete the serviceLane function below.
     static int[] serviceLane(int n, int[][] cases, int[] width) {

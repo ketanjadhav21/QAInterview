@@ -61,7 +61,7 @@ import java.text.*;
 import java.math.*;
 import java.util.regex.*;
 
-public class Solution {
+public class BonAppetit {
     
     public static int calculateBill(int brianItem, int[] bill){
         int billActual = 0;

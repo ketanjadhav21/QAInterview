@@ -70,7 +70,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+public class TheHurdleRace {
 
     // Complete the hurdleRace function below.
     static int hurdleRace(int k, int[] height) {

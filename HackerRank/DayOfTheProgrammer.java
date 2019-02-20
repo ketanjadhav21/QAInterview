@@ -74,7 +74,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+public class DayOfTheProgrammer {
 
     // Complete the solve function below.
     static String solve(int year) {
