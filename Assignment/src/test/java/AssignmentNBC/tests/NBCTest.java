@@ -2,13 +2,16 @@ package AssignmentNBC.tests;
 
 import static com.jayway.restassured.RestAssured.given;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.jayway.restassured.path.json.JsonPath;
 import com.jayway.restassured.response.Response;
-import com.jayway.restassured.path.json.*;
 
 public class NBCTest  {
 	
@@ -114,7 +117,7 @@ public class NBCTest  {
 				System.out.println(res.getBody().asString());
 				System.out.println(res.getStatusCode());
 				
-JsonPath js = new JsonPath(res.asString());
+				JsonPath js = new JsonPath(res.asString());
 				
 				String code = js.getString("error.code");
 				
@@ -175,6 +178,26 @@ JsonPath js = new JsonPath(res.asString());
 	}
 	
 	
+	@Test(description="This test verifies that when query q is passed with value of any field member, it returns object for that field")
+	public void testNBC_POST(){
+		int maxlimitval = 20;
+		Map<String,String> car = new HashMap<>();
+		car.put("plateNumber", "xyx1111");
+		car.put("brand", "audi");
+		car.put("colour", "red");
+		Response res= given().
+				param("api_key", "DEMO_KEY").
+				param("limit",maxlimitval).
+				param("q","Delta IV: Launch").
+				contentType("application/json").header("Accept","application/json").body(car).
+				when().then().statusCode(200).post
+				("https://api.nasa.gov/planetary/sounds");
+				System.out.println(res.getBody().asString());
+				System.out.println(res.getStatusCode());
+				
+				//Here, response should return the object which contains 'Delta IV: Launch' as field member. 
+				// But, we get the full body as response, which is the bug in this API.
+	}
 	
 	
 
