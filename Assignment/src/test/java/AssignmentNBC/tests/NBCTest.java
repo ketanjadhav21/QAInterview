@@ -5,17 +5,20 @@ import static com.jayway.restassured.RestAssured.given;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.hamcrest.Matchers;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.jayway.restassured.http.ContentType;
 import com.jayway.restassured.path.json.JsonPath;
 import com.jayway.restassured.response.Response;
 
 public class NBCTest  {
 	
-	
+	final static String ROOT_URI = "http://localhost:7000/employees";
+
 	@Test(description="This test verifies that when the limit parameter is set to 10 then the response returns only 10 counts")
 	public void testNBC_limit10(){
 		int maxlimitval = 10;
@@ -194,11 +197,54 @@ public class NBCTest  {
 				("https://api.nasa.gov/planetary/sounds");
 				System.out.println(res.getBody().asString());
 				System.out.println(res.getStatusCode());
+	}
 				
 				//Here, response should return the object which contains 'Delta IV: Launch' as field member. 
 				// But, we get the full body as response, which is the bug in this API.
+
+				
+				//POST Call
+	@Test
+	public void post_test() {
+		Response response = given().
+				contentType(ContentType.JSON)
+				.accept(ContentType.JSON)
+				.body("{\"name\": \"Lisa\",\"salary\": \"2000\"}")
+				.when()
+				.post(ROOT_URI + "/create");
+		System.out.println("POST Response\n" + response.asString());
+		// tests
+		response.then().body("id", Matchers.any(Integer.class));
+		response.then().body("name", Matchers.is("Lisa"));
+	}
+
+
+	//PUT Call
+	@Test
+	public void put_test() {
+		Response response = given()
+				.contentType(ContentType.JSON)
+				.accept(ContentType.JSON)
+				.body("{\"name\": \"Lisa Tamaki\",\"salary\": \"20000\"}")
+				.when()
+				.put(ROOT_URI + "/update/3");
+		System.out.println("PUT Response\n" + response.asString());
+		// tests
+		response.then().body("id", Matchers.is(3));
+		response.then().body("name", Matchers.is("Lisa Tamaki"));
+		response.then().body("salary", Matchers.is("20000"));
 	}
 	
-	
+	//DELETE Call
+	@Test
+	public void delete_test() {
+		Response response = given().delete(ROOT_URI + "/delete/3");
+		System.out.println(response.asString());
+		System.out.println(response.getStatusCode());
+		// check if id=3 is deleted
+		response = given().get(ROOT_URI + "/list");
+		System.out.println(response.asString());
+		response.then().body("id", Matchers.not(3));
+	}
 
 }

@@ -4,7 +4,9 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
@@ -76,6 +78,23 @@ public class LoginTest {
 		selectByIndex.selectByIndex(2);
 		
 		driver.findElement(By.linkText("")).click();
+	}
+	
+	public void test_mouse(){
+		// Instantiating Action Interface
+	
+		Actions actions=new Actions(driver);
+
+		// howering on the dropdown
+
+		actions.moveToElement(driver.findElement(By.id("id of the dropdown"))).perform();
+
+		// Clicking on one of the items in the list options
+
+		WebElement subLinkOption=driver.findElement(By.id("id of the sub link"));
+		
+		subLinkOption.click();
+
 	}
 
 }
