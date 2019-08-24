@@ -2,7 +2,9 @@ package AssignmentNBC.tests;
 
 import static com.jayway.restassured.RestAssured.given;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.hamcrest.Matchers;
@@ -11,31 +13,67 @@ import org.json.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.google.gson.JsonArray;
 import com.jayway.restassured.http.ContentType;
 import com.jayway.restassured.path.json.JsonPath;
 import com.jayway.restassured.response.Response;
 
 public class NBCTest  {
 	
-	final static String ROOT_URI = "http://localhost:7000/employees";
+	final static String ROOT_URI = "https://reqres.in";
 
-	@Test(description="This test verifies that when the limit parameter is set to 10 then the response returns only 10 counts")
-	public void testNBC_limit10(){
-		int maxlimitval = 10;
+	@Test(description="This returns single user")
+	public void getSingleUser(){
 		Response res=given().
-				param("api_key", "DEMO_KEY").
-				param("limit",maxlimitval).
 				contentType("application/json").header("Accept","application/json").
 				when().then().statusCode(200).
-				get("https://api.nasa.gov/planetary/sounds");
+				get(ROOT_URI+ "/api/users/2");
 				System.out.println(res.getBody().asString());
 				System.out.println(res.getStatusCode());
 				
 				String str = res.getBody().asString();
 				JSONObject json = new JSONObject(str);
-				int count = json.getInt("count");
-				Assert.assertEquals(count, maxlimitval);
-				System.out.println(count);
+				String data = json.get("data").toString();
+				JSONObject firstName = new JSONObject(data);
+				String fname = firstName.get("first_name").toString();
+				Assert.assertEquals(fname, "Janet");
+				System.out.println(fname);
+	}
+	
+	@Test(description="This returns multiple users")
+	public void getMultipleUsers(){
+		Response res=given().
+				contentType("application/json").header("Accept","application/json").
+				when().then().statusCode(200).
+				get(ROOT_URI+ "/api/unknown");
+				String output = res.getBody().asString();
+				JSONObject jObj = new JSONObject(output);
+				String total = jObj.get("total").toString();
+//				List<String> dataSet = new ArrayList<String>();
+//				List<String> dataSet = new ArrayList<String>();
+//				dataSet = jObj.get(data).toString();
+				String data = jObj.get("data").toString();
+				JsonPath jsonPath = new JsonPath(data);	
+				String second = jsonPath.getString("year[2]");
+				List<String> dataSet = res.jsonPath().getList("data");
+			
+
+				
+
+				
+//				String total = res
+
+				System.out.println(output);
+				System.out.println(total);
+				System.out.println(data);
+				System.out.println(second);
+//				System.out.println(dataSet.get(0).toString());
+//				JSONObject jsonObj = new JSONObject(data);
+//				String total = jsonObj.get("data").toString();
+//				System.out.println(total);
+//			
+				
+				
 	}
 	
 	@Test(description="This test verifies that even if the limit is more than the maximum count, the response returns only the available objects")
