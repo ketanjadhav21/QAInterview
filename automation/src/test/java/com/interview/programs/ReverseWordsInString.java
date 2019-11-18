@@ -2,11 +2,11 @@ package com.interview.programs;
 
 public class ReverseWordsInString {
 	public static void main(String args[]){
-	String result = reverseWords("My Name is Ketan");
-	System.out.println(result);
+		ReverseWordsInString rw = new ReverseWordsInString();
+		rw.reverseWords("My Name is Ketan");
 	}
 	
-		public static String reverseWords(String s) {
+		public  String reverseWords(String s) {
 			if (s == null || s.length() == 0) {
 				return "";
 			}
@@ -19,7 +19,8 @@ public class ReverseWordsInString {
 					sb.append(arr[i]).append(" ");
 				}
 			}
-			return sb.length() == 0 ? "" : sb.substring(0, sb.length() - 1);
+			System.out.println(sb);
+			return s;
 		}
 	}
 

@@ -4,15 +4,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-public class DuplicateCharCount {
+public class RepeatedCharNo {
 	public static void main(String[] args){
-		DuplicateCharCount dcc = new DuplicateCharCount();
-		dcc.findDuplicateChars("geeksforgeeks");
+		String str = "aabbbccccaaa";
+		findRepeatedCharNo(str);
 	}
-	public void findDuplicateChars(String str){
+
+	private static void findRepeatedCharNo(String str) {
+		// TODO Auto-generated method stub
 		Map<Character, Integer> dupsMap = new HashMap<Character, Integer>();
-		char[] chrs = str.toCharArray();
-		for(Character ch:chrs){
+		char[] chars = str.toCharArray();
+		for(Character ch:chars){
 			if(dupsMap.containsKey(ch)){
 				dupsMap.put(ch, dupsMap.get(ch)+1);
 			} else{
@@ -23,8 +25,7 @@ public class DuplicateCharCount {
 		Set<Character> keys = dupsMap.keySet();
 		for(Character ch:keys){
 			if(dupsMap.get(ch)>1){
-//				System.out.println(ch+"---->"+dupsMap.get(ch));
-				System.out.println(ch+":"+dupsMap.get(ch));
+				System.out.println(dupsMap+":"+dupsMap.get(ch));
 			}
 		}
 	}
