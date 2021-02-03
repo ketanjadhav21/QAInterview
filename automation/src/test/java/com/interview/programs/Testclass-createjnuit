@@ -1,0 +1,54 @@
+Implement a test case to validate this workflow:
+-	Client sends a BUY request and gets accepted by the server
+-	Server replies with a several quotes
+-	Clients waits until the price is better than K
+-	Clients then submits an order with the current price
+-	The order gets accepted by the server
+
+Test should considered failed if any of these happens
+-	Client doesn’t receive QuoteAck within 1 second after sending out QuoteRequest
+-	Server rejects the QuoteRequest with QuoteAck(Rejected)
+-	Server doesn’t send any Quote within 30 seconds after the QuoteRequest is accepted
+-	Server stops sending Quote for more than 30 seconds
+-	The price is still worse than K after 100 Quotes
+-	Client doesn’t receive ExecutionReport within 1 second after sending out NewOrderSingle
+-	Server rejects the QuoteRequest with ExecutionReport(Rejected)
+
+class QuoteAck{
+  boolean isAccepted;
+  QuoteAck (){}
+}
+
+class Quote{
+ int quoteId;
+ int price;
+  Quote(){...}
+}
+
+class ExecutionReport{
+  boolean isAccepted;
+  ExecutionReport(){...}
+}
+
+
+class Client{
+  Client(){...}
+  QuoteAck getQuoteAck(long timeout){...}
+  Quote getQuote(long timeout){...}
+  ExecutionReport getExecutionReport(long timeout){...}
+  void sendQuoteRequest(int side){...}  // BUY=1, SELL=2
+  void sendNewOrder(int quoteId){...}
+  boolean logon(){…}
+}
+
+class Test{
+static final int K = 100;
+  @Test
+  public void testRfqWorkflow(){
+    Client client = new Client();
+    assertTrue(client.logon());
+  //implementation here
+  
+  }
+}
+
